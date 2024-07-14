@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarflucar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <style>
+        *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+  body{
+    font-family: 'Open Sans', sans-serif;
+  }
+:root{
+    --color-paragraph: #9d9aa5;
+    --main-color: #458ff6;
+}
+.trafalgar{
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+.container{
+   margin-left: 150px;
+   margin-right: 150px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.header ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.header ul li a{
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+.header ul li .special{
+    font-weight: bold;
+}
+.header ul li a:hover{
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s;
+}
+.dots{
+    position: absolute;
+    left: 0;
+    /* margin-bottom: 10px; */
+}
+
+.intoduction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.intoduction .virtual h1{
+    font-size: 40;
+    margin-bottom: 20px;
+}
+.intoduction .virtual p{
+    color: #0000008a;
+    margin-bottom: 20px;
+}
+.intoduction .virtual button{
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.intoduction .virtual button:hover{
+    background-color: white;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    transition: 1s;
+}
+.service{
+    padding: 100px 0;
+    position: relative;
+    text-align: center;
+}
+.service h2{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    position: relative;
+}
+.service h2::after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: black;
+    bottom: -25px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+.service  .para{
+    color: var(--color-paragraph);
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    margin-bottom: 60px;
+}
+.service .first{
+    position: absolute;
+    left: 0;
+    top: 25%;
+    transform: rotate(182deg);
+}
+.service .second{
+    position: absolute;
+    right: -40px;
+    top: 43%;
+}
+.service .divisions{
+    z-index: 10;
+    position: relative;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+.service .divisions .section{
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0px 10px 10px 5px #ccc;
+    border-radius: 20px;
+    margin: 0;
+    text-align: left;
+    z-index: 100;
+}
+.service .divisions .section:hover{
+    position: relative;
+    bottom:  5px;
+    transition: 1s;
+}
+.service .divisions .section img{
+    margin-bottom: 10px;
+}
+.service .divisions .section h3{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.service .divisions .section p{
+    color: var(--color-paragraph);
+    line-height: 30px;
+}
+.service button{
+    border: 2px solid var(--main-color);
+    background: white;
+    text-align: center;
+    margin: 50px auto;
+    padding: 15px 40px;
+    border-radius: 29px;
+    display: block;
+    color: #2196F3;
+    font-size: large;
+    font-weight: bold;
+}
+.service button:hover{
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    transition: .5s;
+    cursor: pointer;
+}
+.leading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 100px;
+    margin: 100px 0;
+}
+.leading .providers h2{
+    margin-bottom: 40px;
+    position: relative;
+}
+.leading .providers h2::after{
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+    width: 45px;
+    height: 2px;
+    background-color: black;
+}
+.leading .providers p{
+    color: var(--color-paragraph);
+    font-size: 14px;
+    line-height: 25px;
+    margin-top: 10px;
+}
+.leading .providers button{
+    border: 2px solid var(--main-color);
+    background: white;
+    margin-top: 20px ;
+    padding: 15px 40px;
+    border-radius: 29px;
+    color: #2196F3;
+    font-size: large;
+    font-weight: bold;
+}
+.leading .providers button:hover{
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    transition: .5s;
+    cursor: pointer;
+}
+.download{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 100px;
+    margin: 100px 0;
+}
+.download .apps h2{
+    margin-bottom: 40px;
+    position: relative;
+}
+.download .apps h2::after{
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+    width: 45px;
+    height: 2px;
+    background-color: black;
+}
+.download .apps p{
+    color: var(--color-paragraph);
+    font-size: 14px;
+    line-height: 25px;
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+}
+.download .apps button{
+    border: 2px solid var(--main-color);
+    background: white;
+    margin-top: 20px;
+    padding: 15px 40px;
+    border-radius: 29px;
+    color: var(--main-color);
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    margin-top: 40px;
+}
+.download .apps button:hover{
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    transition: .5s;
+}
+.custumer{
+    text-align: center;
+}
+.custumer .background{
+    background-color: var(--main-color);
+    position: relative;
+    border-radius: 20px;
+}
+.background .first{
+    position: absolute;
+    right: 5px;
+}
+.background .second{
+    position: absolute;
+    bottom: 0;
+    left: -50px;
+}
+.custumer .background h2{
+    margin-bottom: 50px;
+    position: relative;
+    top: 50px;
+    color: white;
+}
+.custumer .background h2::after{
+    content: "";
+    width: 40px;
+    height: 2px;
+    position: absolute;
+    background-color: white;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.custumer .background .pictureinfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px; 
+    padding: 20px 60px; 
+    border-radius: 20px;
+    color: white;
+}
+.custumer .background .information{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px; 
+    padding: 30px 60px;
+}
+.custumer .background .information .textinfo h4{
+    white-space: nowrap;
+}
+.custumer .background .information .textinfo p{
+    white-space: nowrap;
+    margin-right: 25px;
+}
+
+.custumer .background .saying p{
+    line-height: 30px;
+}
+.custumer .shapes{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 50px 0;
+    color :#2195f359;
+}
+.custumer .shapes .blue{
+    color: var(--main-color);
+}
+
+.custumer .shapes .circls i{
+    font-size: 10px;
+    margin: 0 10px;
+}
+.check{
+    text-align: center;
+    position: relative;
+    margin: 100px 0;
+}
+
+.check .container{
+    position: relative;
+}
+.check h2{
+    margin-bottom: 60px;
+    position: relative;
+}
+.check h2::after{
+    content: "";
+    width: 40px;
+    height: 2px;
+    position: absolute;
+    background-color: black;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.check .first{
+    position: absolute;
+    z-index: -3;
+    right: 0;
+    bottom: 50px;
+}
+.check .second{
+    position: absolute;
+    left: -90px;
+    top: 20px;
+    z-index: -1;
+}
+.check .types{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.check .types .type{
+    box-shadow: 0 15px 20px #F5F7FF;
+    text-align: left;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+.check .types .type img{
+    border-radius: 20px;
+    width: 100%; 
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.check .types .type .description{
+    flex-grow: 1;
+    padding: 30px;
+}
+.check .types .type .description h3{
+    font-size: 18px;
+    line-height: 35px;
+}
+.check .types .type .description p{
+    /* line-height: 35px; */
+    color: var(--color-paragraph);
+}
+.check .types .type h4{
+    color: var(--main-color);
+}
+.check .types .type p{
+    color: #cecdd2;
+}
+.check button{
+    border: 2px solid var(--main-color);
+    background: white;
+    padding: 15px 40px;
+    border-radius: 29px;
+    color: #2196F3;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 50px;
+}
+.check button:hover{
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    transition: .5s;
+}
+.footer {
+    margin-top: 200px;
+    position: relative;
+    background-color: var(--main-color);
+}
+.footer .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    text-align: center;
+    color: white;
+    align-items: center;
+}
+.footer .trafalgar .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0px 10px;
+}
+.footer .trafalgar .title h3{
+    padding: 10px;
+    background: white;
+    color: var(--main-color);
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.footer  h4{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer h6{
+    font-size: 15px;
+}
+.footer p{
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+.footer .first{
+    position: absolute;
+    right: 0;
+    top: -50px;
+}
+.footer .second{
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+    </style>
+</head>
+<body>
+<div class="trafalgar">
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="images/logo.png" alt="">
+            </div>
+            <ul class="links">
+                <li><a class="special" href="#home">home</a></li>
+                <li><a href="#findadoctor">find a doctor</a></li>
+                <li><a href="#app">app</a></li>
+                <li><a href="#testimonials">testimonials</a></li>
+                <li><a href="#about">about us</a></li>
+            </ul>
+        </div>
+        <div class="dots">
+            <img src="images/element (1).png" alt="">
+        </div>
+        <div class="intoduction">
+            <div class="virtual">
+                <h1>virtual healthcare for you</h1>
+                <p>trafalgare provides progressive, and affordable healthcare, accessible on mobile and online for everyone</p>
+                <button>consult today</button>
+            </div>
+            <img src="images/trafalgar-header illustration 1.png" alt="">
+        </div>       
+    </div>
+    <div class="service">
+        <div class="container">
+            <h2>our services</h2>
+            <p class="para">we provide to you the best choiches for you. Adjust it to your health needs and make sure your undergo treatment with our highly qualified doctors you can consult with us which type of service is suitable for your health</p>
+            <img class="first" src="images/Vector (1).png" alt="">
+            <!-- <img class="second" src="images/element (2).png" alt=""> -->
+            <div class="divisions">
+                <div class="section">
+                    <img src="images/Frame.png" alt="">
+                    <h3>search doctor</h3>
+                    <p>choose yor doctor from thousands of specialist,general,and trusted hospitals</p>
+                </div>
+                <div class="section">
+                    <img src="images/Group.png" alt="">
+                    <h3>online pharmacy</h3>
+                    <p>buy youtr medecines with our mobile application with a simple delivery system</p>
+                </div>
+                <div class="section">
+                    <img src="images/Frame (1).png" alt="">
+                    <h3>consultation</h3>
+                    <p>free consultation with our trusted doctors and getb the best recomendations</p>
+                </div>
+                <img class="second" src="images/element (2).png" alt="">
+                <div class="section">
+                    <img src="images/Frame (4).png" alt="">
+                    <h3>details info</h3>
+                    <p>free consultation with our trusted doctors and getb the best recomendations</p>
+                </div>
+                <div class="section">
+                    <img src="images/Frame (5).png" alt="">
+                    <h3>emergency care</h3>
+                    <p>you can get 24/7 urgent care for youself or your children and your lovely family</p>
+                </div>
+                <div class="section">
+                    <img src="images/Frame (6).png" alt="">
+                    <h3>tracking</h3>
+                    <p>track and save your medical history and health data</p>
+                </div>
+            </div>
+            <button>learn more</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="leading">
+            <img src="images/trafalgar-illustration sec02 1.png" alt="">
+            <div class="providers">
+                <h2>leading healthcare providers</h2>
+                <p>tarfalgar provides progressive, and affordable healthcare, accessable on mobile and on line to everyone. to us, it's not just work. we take pride in the solutions we deliver</p>
+                <button>learn more</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="download">
+            <div class="apps">
+                <h2>dowmload our mobile apps</h2>
+                <p>our dedicated patient engagement app and web portal allow you to access information instantanieously (no tedeous form, long calls, or administrative hassle) and securely</p>
+                <button><span>download</span><i class="fa-solid fa-arrow-down"></i></button>
+            </div>
+            <img src="images/trafalgar-header illustration 1.png" alt="">
+        </div>
+    </div>
+    <div class="custumer">
+        <div class="container">
+            <!-- <img class="first" src="images/element (3).png" alt="">
+            <img class="second" src="images/element (3).png" alt=""> -->
+            <div class="background">
+                <img class="first" src="images/element (3).png" alt="">
+                <img class="second" src="images/element (3).png" alt="">                 
+                <h2>what our custumer are saying</h2>
+                <div class="pictureinfo">
+                    <div class="information">
+                        <div class="images">
+                            <img src="images/Group 5.png" alt="">
+                        </div>
+                        <div class="textinfo">
+                            <h4>edward newgate</h4>
+                            <p>founder cycle</p>
+                        </div>
+                    </div>
+                    <div class="saying">
+                        <p>"our dedicated patient engagement app and web portal allow you to access information instantanieously (no tedeous form, long calls, or administrative hassle) and securely"</p>
+                    </div>
+                </div>
+                </div>
+            <div class="shapes">
+                <i class="fa-solid fa-arrow-left"></i>
+                <div class="circls">
+                    <i class="fa-solid fa-circle blue"></i>
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle"></i>
+                </div>
+                <i class="fa-solid fa-arrow-right blue"></i>
+            </div>
+        </div>
+    </div>
+    <div class="check">
+        <img class="first" src="images/Vector (1).png" alt="">
+        <div class="container">
+            <img class="second" src="images/element (3).png" alt="">
+            <h2>Check out our latest article</h2>
+            <div class="types">
+                <div class="type">
+                    <img src="images/image 2 (2).png" alt="">
+                    <div class="description">
+                        <h3>Disease detection, check up in the laboratory</h3>
+                        <p>Herbal medicine is very widely used at this time because of its very good for your health...</p>
+                        <h4>Read more <i class="fa-solid fa-arrow-right"></i></h4>
+                    </div>
+                </div>
+                <div class="type">
+                    <img src="images/Mask Group (1).png" alt="">
+                        <div class="description">
+                            <h3>Herbal medicines that are safe for consumption</h3> 
+                            <p>Herbal medicine is very widely used at this time because of its very good for your health...</p>
+                            <h4>Read more <i class="fa-solid fa-arrow-right"></i></h4>
+                        </div>
+                </div>
+                <div class="type">
+                    <img src="images/image 3.png" alt="">
+                    <div class="description">
+                        <h3>Natural care for healthy facial skin</h3>
+                        <p>A healthy lifestyle should start from now and also for your skin health.
+                            There are some...</p>
+                        <h4>Read more <i class="fa-solid fa-arrow-right"></i></h4>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <button>View all</button>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="trafalgar">
+                <div class="title">
+                    <h3>T</h3>
+                    <h4>Trafalgar</h4>
+                </div>
+                <p>Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone</p>
+                <p>©Trafalgar PTY LTD 2020. All rights reserved</p>
+            </div>
+            <div class="company">
+                <h4>Company</h4>
+                <p>About</p>
+                <p>Testimonials</p>
+                <p>Find a doctor</p>
+                <p>Apps</p>
+            </div>
+            <div class="region">
+                <h4>Region</h4>
+                <p>Indonesia</p>
+                <p>Singapore</p>
+                <p>Hongkong</p>
+                <p>Canada</p>
+            </div>
+            <div class="help">
+                <h4>Help</h4>
+                <p>Help center</p>
+                <p>Contact support</p>
+                <p>Instructions</p>
+                <p>How it works</p>            
+            </div>
+        </div>
+        <img class="first" src="images/element (3).png" alt="">
+        <img class="second" src="images/element (3).png" alt="">
+    </div>
+</div>
+</body>
+</html>
